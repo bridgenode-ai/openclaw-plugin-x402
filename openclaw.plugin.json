@@ -1,0 +1,41 @@
+{
+  "id": "bridgenode",
+  "name": "BridgeNode",
+  "description": "Pay-per-request AI inference via x402 on Solana USDC — OpenAI-compatible chat completions. No API keys, no accounts; BridgeNode sponsors gas fees.",
+  "version": "0.1.0",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "baseUrl": {
+        "type": "string",
+        "description": "BridgeNode OpenAI-compatible base URL (default https://bridgenode.cc/v1; HTTPS + bridgenode.cc only)."
+      },
+      "rpcUrl": {
+        "type": "string",
+        "description": "Solana RPC URL used for payment settlement (default https://api.mainnet-beta.solana.com)."
+      },
+      "payTo": {
+        "type": "string",
+        "description": "BridgeNode USDC receiving wallet (recipient pin)."
+      },
+      "maxUsdcPerTx": {
+        "type": "string",
+        "description": "Max USDC per transaction (default \"1\"; exactly \"0\" disables the cap)."
+      },
+      "walletPrivateKey": {
+        "type": "string",
+        "description": "Agent Solana wallet private key (base58) — prefer env SOLANA_PRIVATE_KEY or a SecretRef."
+      }
+    }
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": [
+      "list_models",
+      "get_price_estimate",
+      "chat_completions"
+    ]
+  }
+}
