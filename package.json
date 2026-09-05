@@ -1,6 +1,6 @@
 {
   "name": "@bridgenode/openclaw-plugin-x402",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "OpenClaw tool plugin for pay-per-request LLM inference via x402 on Solana USDC — no API keys, no accounts, gas sponsored",
   "type": "module",
   "main": "./dist/index.js",
@@ -50,7 +50,7 @@
     "typebox": "^1.3.27"
   },
   "peerDependencies": {
-    "openclaw": ">=2026.5.17"
+    "openclaw": ">=2026.9.1"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
@@ -71,7 +71,7 @@
       "./dist/index.js"
     ],
     "compat": {
-      "pluginApi": ">=2026.5.17"
+      "pluginApi": ">=2026.9.1"
     },
     "build": {
       "openclawVersion": "2026.9.1"

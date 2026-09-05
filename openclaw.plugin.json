@@ -2,7 +2,7 @@
   "id": "bridgenode",
   "name": "BridgeNode",
   "description": "Pay-per-request AI inference via x402 on Solana USDC — OpenAI-compatible chat completions. No API keys, no accounts; BridgeNode sponsors gas fees.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "configSchema": {
     "type": "object",
     "properties": {
