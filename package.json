@@ -69,6 +69,12 @@
   "openclaw": {
     "extensions": [
       "./dist/index.js"
-    ]
+    ],
+    "compat": {
+      "pluginApi": ">=2026.5.17"
+    },
+    "build": {
+      "openclawVersion": "2026.9.1"
+    }
   }
 }
