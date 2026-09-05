@@ -59,6 +59,25 @@ automatically). BridgeNode pays transaction fees.
 - **Replay-safe:** a payment failure is terminal — retrying the same request
   never double-charges or re-runs for free (same signature → same transaction).
 
+## Key handling
+
+The agent wallet private key is the only secret this plugin uses. It is read
+**only** from the plugin configuration (use a SecretRef) or from the process
+environment (`SOLANA_PRIVATE_KEY`). It is never hard-coded in source, never
+logged, and never transmitted anywhere: only the signed Solana transaction
+leaves the host, and BridgeNode never sees the key. Treat it like any signing
+key — keep it out of shell history and chat logs, and rotate it freely; the
+plugin only ever signs Solana-mainnet USDC to the pinned BridgeNode wallet,
+bounded by the spend cap.
+
+## Compatibility
+
+The plugin declares `pluginApi >= 2026.5.17` and is built with OpenClaw
+`2026.9.1` (see `openclaw.compat` / `openclaw.build` in `package.json`).
+Confirm your OpenClaw build satisfies the range before enabling the plugin
+(`openclaw plugins validate` reports mismatches). New OpenClaw releases may
+change the plugin SDK — re-validate and bump after host upgrades.
+
 ## Development
 
 ```bash
